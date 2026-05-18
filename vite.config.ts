@@ -9,9 +9,7 @@ export default defineConfig(({ mode }) => {
   return {
     plugins: [react(), tailwindcss()],
 
-    // Use "/" porque você vai usar domínio próprio.
-    // Exemplo: https://seudominio.com/
-    base: '/',
+    base: '/BEAUTYGLOW/',
 
     define: {
       'process.env.GEMINI_API_KEY': JSON.stringify(env.GEMINI_API_KEY || ''),
