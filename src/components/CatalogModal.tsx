@@ -92,11 +92,12 @@ export const CatalogModal = ({
                         className="group bg-white border border-brand-beige flex flex-col overflow-hidden hover:border-brand-gold transition-all duration-500 rounded-xl"
                       >
                         {service.image && (
-                          <div className="w-full aspect-square overflow-hidden flex-shrink-0">
+                          <div className="w-full aspect-[4/5] overflow-hidden flex-shrink-0">
                             <img 
                               src={service.image} 
                               alt={service.name}
                               className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                              style={{ objectPosition: service.imagePosition || 'center' }}
                             />
                           </div>
                         )}

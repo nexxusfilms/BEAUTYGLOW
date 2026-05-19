@@ -31,7 +31,8 @@ export const BRUNA_SERVICES: { [key: string]: Service[] } = {
       name: "Brow Recovery", 
       category: "Sobrancelhas", 
       description: "Protocolo de reconstrução para tratar e estimular o crescimento de fios naturais, reduzindo a dependência de pigmentos.",
-      image: "https://pbs.twimg.com/media/HIn31KGXQAA72fZ?format=jpg&name=large"
+      image: "https://pbs.twimg.com/media/HIn31KGXQAA72fZ?format=jpg&name=large",
+      imagePosition: "center 70%"
     }
   ],
   "Lábios": [
@@ -72,7 +73,8 @@ export const BRUNA_SERVICES: { [key: string]: Service[] } = {
       name: "Toxina Botulínica", 
       category: "Injetáveis", 
       description: "Suavização e prevenção de linhas de expressão com planejamento individualizado para manter a dinâmica natural do rosto.",
-      image: "https://pbs.twimg.com/media/HIn0bP6XMAAiEJ2?format=jpg&name=large"
+      image: "https://pbs.twimg.com/media/HIn0bP6XMAAiEJ2?format=jpg&name=large",
+      imagePosition: "center"
     },
     { 
       id: "sk2", 
@@ -86,7 +88,8 @@ export const BRUNA_SERVICES: { [key: string]: Service[] } = {
       name: "Bioestimulador de Colágeno", 
       category: "Injetáveis", 
       description: "Estímulo gradual da produção de colágeno pelo próprio organismo, promovendo firmeza e estrutura à pele a longo prazo.",
-      image: "https://pbs.twimg.com/media/HIn1S5jXUAEK6Or?format=jpg&name=large"
+      image: "https://pbs.twimg.com/media/HIn1S5jXUAEK6Or?format=jpg&name=large",
+      imagePosition: "center"
     }
   ],
   "Complementares": [

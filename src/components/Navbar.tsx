@@ -87,7 +87,7 @@ export const Navbar = ({ onOpenCatalog }: { onOpenCatalog: (type: 'bruna' | 'duc
     { name: 'Catálogo Nails', onClick: () => onOpenCatalog('ducy'), type: 'action' },
     { name: 'Equipe', href: '/#team', type: 'anchor' },
     { name: 'Onde Estamos', href: '/#location', type: 'anchor' },
-    { name: 'Contato', href: '/#selecao-catalogo', type: 'anchor' },
+    { name: 'Instagram', href: 'https://www.instagram.com/beautyglowbr/', type: 'link' },
   ];
 
   const closeMenu = () => setIsMobileMenuOpen(false);
@@ -111,9 +111,13 @@ export const Navbar = ({ onOpenCatalog }: { onOpenCatalog: (type: 'bruna' | 'duc
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
-        <Link to="/" className="font-serif text-2xl tracking-widest text-brand-black">
+        <a 
+          href="#selecao-catalogo" 
+          onClick={(e) => scrollToSection(e, 'selecao-catalogo')}
+          className="font-serif text-2xl tracking-widest text-brand-black cursor-pointer"
+        >
           BEAUTY <span className="font-light italic">GLOW</span>
-        </Link>
+        </a>
 
         {/* Desktop Nav */}
         <div className="hidden md:flex gap-10 items-center">

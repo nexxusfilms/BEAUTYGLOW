@@ -5,6 +5,7 @@ export interface Service {
   price?: string;
   category: string;
   image?: string;
+  imagePosition?: string;
 }
 
 export interface TeamMember {

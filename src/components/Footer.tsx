@@ -13,7 +13,7 @@ export const Footer = () => {
             Um ecossistema estético focado em excelência técnica e na preservação da sua beleza natural. Atendimento exclusivo sob agendamento.
           </p>
           <div className="flex gap-4">
-            <a href="#" className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-brand-gold hover:border-brand-gold transition-all duration-300">
+            <a href="https://www.instagram.com/beautyglowbr/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-brand-gold hover:border-brand-gold transition-all duration-300">
               <Instagram size={18} />
             </a>
           </div>
@@ -33,7 +33,7 @@ export const Footer = () => {
             <ul className="flex flex-col gap-3 text-sm font-light text-white/40">
               <li><a href="#selecao-catalogo" className="hover:text-brand-gold transition-colors">Estética Facial</a></li>
               <li><a href="#selecao-catalogo" className="hover:text-brand-gold transition-colors">Nail Design</a></li>
-              <li><a href="#selecao-catalogo" className="hover:text-brand-gold transition-colors">Agendamento</a></li>
+              <li><a href="https://www.instagram.com/beautyglowbr/" target="_blank" rel="noopener noreferrer" className="hover:text-brand-gold transition-colors">Agendamento</a></li>
             </ul>
           </div>
         </div>
