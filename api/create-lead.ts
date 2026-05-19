@@ -1,3 +1,5 @@
+import type { VercelRequest, VercelResponse } from '@vercel/node';
+
 type LeadPayload = {
   name?: string;
   telephone?: string;
@@ -7,26 +9,24 @@ type LeadPayload = {
   message?: string;
 };
 
-const corsHeaders = {
-  'Access-Control-Allow-Origin': '*',
-  'Access-Control-Allow-Methods': 'POST, OPTIONS',
-  'Access-Control-Allow-Headers': 'Content-Type',
-};
+export default async function handler(req: VercelRequest, res: VercelResponse) {
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
 
-export default async function handler(req: Request) {
   if (req.method === 'OPTIONS') {
-    return new Response(null, { status: 204, headers: corsHeaders });
+    return res.status(204).end();
   }
 
   if (req.method !== 'POST') {
-    return Response.json(
-      { ok: false, error: 'Method not allowed' },
-      { status: 405, headers: corsHeaders }
-    );
+    return res.status(405).json({
+      ok: false,
+      error: 'Method not allowed',
+    });
   }
 
   try {
-    const body = (await req.json()) as LeadPayload;
+    const body = req.body as LeadPayload;
 
     const name = body.name?.trim();
     const telephone = (body.telephone || body.phone || '').trim();
@@ -34,10 +34,10 @@ export default async function handler(req: Request) {
     const service = body.service?.trim();
 
     if (!name || !telephone || !email) {
-      return Response.json(
-        { ok: false, error: 'Nome, telefone e email são obrigatórios.' },
-        { status: 400, headers: corsHeaders }
-      );
+      return res.status(400).json({
+        ok: false,
+        error: 'Nome, telefone e email são obrigatórios.',
+      });
     }
 
     const endpoint = process.env.EPROCORPO_GRAPHQL_URL;
@@ -47,10 +47,10 @@ export default async function handler(req: Request) {
     const storeIdentifier = process.env.EPROCORPO_STORE_IDENTIFIER;
 
     if (!endpoint || !token || !regionIdentifier || !sourceIdentifier || !storeIdentifier) {
-      return Response.json(
-        { ok: false, error: 'CRM não configurado.' },
-        { status: 500, headers: corsHeaders }
-      );
+      return res.status(500).json({
+        ok: false,
+        error: 'CRM não configurado.',
+      });
     }
 
     const query = `
@@ -89,22 +89,23 @@ export default async function handler(req: Request) {
     if (!crmResponse.ok || crmData.errors) {
       console.error('Erro CRM:', crmData);
 
-      return Response.json(
-        { ok: false, error: 'Erro ao enviar lead para o CRM.', details: crmData },
-        { status: 502, headers: corsHeaders }
-      );
+      return res.status(502).json({
+        ok: false,
+        error: 'Erro ao enviar lead para o CRM.',
+        details: crmData,
+      });
     }
 
-    return Response.json(
-      { ok: true, leadIdentifier: crmData.data?.createLead?.identifier },
-      { status: 200, headers: corsHeaders }
-    );
+    return res.status(200).json({
+      ok: true,
+      leadIdentifier: crmData.data?.createLead?.identifier,
+    });
   } catch (error) {
     console.error(error);
 
-    return Response.json(
-      { ok: false, error: 'Erro interno ao processar lead.' },
-      { status: 500, headers: corsHeaders }
-    );
+    return res.status(500).json({
+      ok: false,
+      error: 'Erro interno ao processar lead.',
+    });
   }
 }
