@@ -1,4 +1,4 @@
-import { MAIN_PHONE_NUMBER, type Service } from '../constants';
+import { PHONE_NUMBER, type Service } from '../constants';
 
 type CatalogModalProps = {
   isOpen: boolean;
@@ -21,7 +21,7 @@ export function CatalogModal({
 }: CatalogModalProps) {
   if (!isOpen) return null;
 
-  const phone = customPhoneNumber || MAIN_PHONE_NUMBER;
+  const phone = customPhoneNumber || PHONE_NUMBER;
   const message = encodeURIComponent(whatsappMessagePrefix);
   const whatsappUrl = `https://wa.me/${phone}?text=${message}`;
 

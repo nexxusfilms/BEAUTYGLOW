@@ -1,3 +1,8 @@
+/**
+ * @license
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
 import { useState } from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { Navbar } from './components/Navbar';
@@ -15,14 +20,15 @@ export default function App() {
       <ScrollToTop />
       <div className="bg-brand-offwhite min-h-screen selection:bg-brand-beige selection:text-brand-black">
         <Navbar onOpenCatalog={setOpenCatalog} />
-
+        
         <main>
           <Home onOpenCatalog={setOpenCatalog} />
         </main>
 
         <Footer />
 
-        <CatalogModal
+        {/* Global Modals */}
+        <CatalogModal 
           isOpen={openCatalog === 'bruna'}
           onClose={() => setOpenCatalog(null)}
           title="Estética Facial & Injetáveis"
@@ -31,7 +37,7 @@ export default function App() {
           whatsappMessagePrefix="Olá, gostaria de agendar minha experiência na Beauty Glow!"
         />
 
-        <CatalogModal
+        <CatalogModal 
           isOpen={openCatalog === 'ducy'}
           onClose={() => setOpenCatalog(null)}
           title="Ducy Nails"
@@ -44,3 +50,4 @@ export default function App() {
     </Router>
   );
 }
+
