@@ -84,7 +84,7 @@ export const Navbar = ({ onOpenCatalog }: { onOpenCatalog: (type: 'bruna' | 'duc
   const navLinks: NavLink[] = [
     { name: 'A clínica', href: '/#about', type: 'anchor' },
     { name: 'Agendamento Estética', onClick: () => onOpenCatalog('bruna'), type: 'action' },
-    { name: 'Catálogo Nails', onClick: () => onOpenCatalog('ducy'), type: 'action' },
+    { name: 'Agendamento Nails', onClick: () => onOpenCatalog('ducy'), type: 'action' },
     { name: 'Equipe', href: '/#team', type: 'anchor' },
     { name: 'Onde Estamos', href: '/#location', type: 'anchor' },
     { name: 'Instagram', href: 'https://www.instagram.com/beautyglowbr/', type: 'link' },
