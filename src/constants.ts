@@ -24,7 +24,7 @@ export const BRUNA_SERVICES: { [key: string]: Service[] } = {
       name: "Brow Lamination",
       category: "Sobrancelhas",
       description: "Técnica de alinhamento dos fios para um visual mais encorpado, moderno e com maior versatilidade de estilo.",
-      image: "https://pbs.twimg.com/media/HIn3psfXcAAbWlq?format=jpg&name=large"
+      image: "https://pbs.twimg.com/media/HInxSyrXoAAiXz-?format=jpg&name=medium"
     },
     {
       id: "sb4",
@@ -59,7 +59,7 @@ export const BRUNA_SERVICES: { [key: string]: Service[] } = {
       name: "Lash Lifting",
       category: "Cílios",
       description: "Curvatura e tingimento dos próprios cílios, criando um efeito de rímel natural que dura várias semanas.",
-      image: "https://pbs.twimg.com/media/HIn47oCX0AA68p0?format=jpg&name=large"
+      image: "https://pbs.twimg.com/media/HInzYFHWoAEFs5k?format=jpg&name=large"
     },
     {
       id: "ci2",
@@ -83,7 +83,7 @@ export const BRUNA_SERVICES: { [key: string]: Service[] } = {
       name: "Preenchimento Facial",
       category: "Injetáveis",
       description: "Restauração de volumes perdidos e refinamento de contornos com ácido hialurônico de alta tecnologia.",
-      image: "https://pbs.twimg.com/media/HIn0bP6XMAAiEJ2?format=jpg&name=large",
+      image: "https://pbs.twimg.com/media/HIn2WwRWcAEygCk?format=jpg&name=large",
       imagePosition: "center"
     },
     {
@@ -122,7 +122,7 @@ export const DUCY_SERVICES: { [key: string]: Service[] } = {
     { id: "na5", name: "Alinhamento de Lâminas", category: "Alongamento", description: "Harmonização do formato natural sem necessidade de extensões completas.", image: "https://pbs.twimg.com/media/HIW2hpoWMAASxkV?format=jpg&name=medium" }
   ],
   "Blindagem": [
-    { id: "st1", name: "Banho de Gel", category: "Blindagem", description: "Capa protetora sobre as unhas naturais para evitar quebras e garantir esmaltação perfeita.", image: "https://pbs.twimg.com/media/HIW2lhSXYAA8Wf6?format=jpg&name=medium" },
+    { id: "st1", name: "Banho de Gel", category: "Blindagem", description: "Capa protetora sobre as unhas naturais para evitar quebras e garantir esmaltação perfeita.", image: "https://pbs.twimg.com/media/HIW2iJOXUAAN4NL?format=jpg&name=medium" },
     { id: "st2", name: "Blindagem de Diamante", category: "Blindagem", description: "Reforço extra-resistente para unhas extremamente frágeis ou com curvatura acentuada.", image: "https://pbs.twimg.com/media/HIW2lhSWsAAtfBy?format=jpg&name=medium" },
     { id: "st3", name: "Blindagem Cimentinho", category: "Blindagem", description: "Combinação de gel e acrílico para máxima dureza e crescimento saudável.", image: "https://pbs.twimg.com/media/HIW2lhRXQAAWoBS?format=jpg&name=medium" }
   ],
@@ -131,7 +131,7 @@ export const DUCY_SERVICES: { [key: string]: Service[] } = {
     { id: "es2", name: "Nail Art Sofisticada", category: "Estilo", description: "Personalização com pedrarias, madrepérola e texturas para um visual exclusivo.", image: "https://pbs.twimg.com/media/HIn-0n2W8AACv9G?format=jpg&name=large" }
   ],
   "Cutilagem": [
-    { id: "cu1", name: "Cutilagem Híbrida", category: "Cutilagem", description: "Técnica avançada que combina métodos manuais e mecânicos para um acabamento impecável e duradouro.", image: "https://images.unsplash.com/photo-1610992015732-2449b0c2629b?q=80&w=2070&auto=format&fit=crop" }
+    { id: "cu1", name: "Cutilagem Híbrida", category: "Cutilagem", description: "Técnica avançada que combina métodos manuais e mecânicos para um acabamento impecável e duradouro.", image: "https://pbs.twimg.com/media/HIt2C-eXYAA55UD?format=jpg&name=large" }
   ]
 };
 

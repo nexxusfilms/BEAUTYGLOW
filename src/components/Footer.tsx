@@ -33,7 +33,7 @@ export const Footer = () => {
             <ul className="flex flex-col gap-3 text-sm font-light text-white/40">
               <li><a href="#selecao-catalogo" className="hover:text-brand-gold transition-colors">Estética Facial</a></li>
               <li><a href="#selecao-catalogo" className="hover:text-brand-gold transition-colors">Nail Design</a></li>
-              <li><a href="https://www.instagram.com/beautyglowbr/" target="_blank" rel="noopener noreferrer" className="hover:text-brand-gold transition-colors">Agendamento</a></li>
+              <li><a href="#selecao-catalogo" className="hover:text-brand-gold transition-colors">Agendamento</a></li>
             </ul>
           </div>
         </div>
