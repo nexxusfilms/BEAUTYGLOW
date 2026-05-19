@@ -92,8 +92,16 @@ Gostaria de mais informações sobre o serviço: ${service.name}`;
 
     const telephoneDigits = formData.telephone.replace(/\D/g, '');
 
-    if (telephoneDigits.length < 10 || telephoneDigits.length > 11) {
-      setSubmitError('Informe um telefone brasileiro válido com DDD. Exemplo: 11999999999.');
+    if (telephoneDigits.length !== 11) {
+      setSubmitError('Informe um celular brasileiro válido com DDD. Exemplo: 11999999999.');
+      setIsSubmitting(false);
+      return;
+    }
+
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+
+    if (!emailPattern.test(formData.email.trim())) {
+      setSubmitError('Informe um email válido. Exemplo: nome@email.com.');
       setIsSubmitting(false);
       return;
     }
@@ -115,7 +123,7 @@ Email: ${formData.email}`;
         body: JSON.stringify({
           name: formData.name,
           telephone: telephoneDigits,
-          email: formData.email,
+          email: formData.email.trim(),
           service: selectedService.name,
           message,
         }),
@@ -302,14 +310,19 @@ Email: ${formData.email}`;
                       </label>
                       <input
                         required
-                        type="tel"
+                        type="text"
                         inputMode="numeric"
                         maxLength={11}
-                        pattern="[0-9]{10,11}"
+                        pattern="[0-9]{11}"
                         value={formData.telephone}
                         onChange={(event) => {
                           const digits = event.target.value.replace(/\D/g, '').slice(0, 11);
                           setFormData((current) => ({ ...current, telephone: digits }));
+                        }}
+                        onPaste={(event) => {
+                          event.preventDefault();
+                          const pasted = event.clipboardData.getData('text').replace(/\D/g, '').slice(0, 11);
+                          setFormData((current) => ({ ...current, telephone: pasted }));
                         }}
                         className="w-full rounded-xl border border-brand-beige px-4 py-4 outline-none focus:border-brand-gold"
                         placeholder="11999999999"
@@ -323,6 +336,7 @@ Email: ${formData.email}`;
                       <input
                         required
                         type="email"
+                        pattern="[^\s@]+@[^\s@]+\.[^\s@]{2,}"
                         value={formData.email}
                         onChange={(event) =>
                           setFormData((current) => ({ ...current, email: event.target.value }))
