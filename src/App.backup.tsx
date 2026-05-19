@@ -32,7 +32,7 @@ export default function App() {
           isOpen={openCatalog === 'bruna'}
           onClose={() => setOpenCatalog(null)}
           title="Estética Facial & Injetáveis"
-          subtitle="Procedimentos Avançados"
+          subtitle="Bruna Services • Procedimentos Avançados"
           services={BRUNA_SERVICES}
           whatsappMessagePrefix="Olá, gostaria de agendar minha experiência na Beauty Glow!"
         />

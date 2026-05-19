@@ -343,5 +343,3 @@ Email: ${formData.email}`;
     </AnimatePresence>
   );
 };
-
-export default CatalogModal;
