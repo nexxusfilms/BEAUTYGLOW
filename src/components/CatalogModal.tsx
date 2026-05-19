@@ -62,7 +62,7 @@ export const CatalogModal = ({
     const isDucyCatalog = Boolean(customPhoneNumber);
 
     if (isDucyCatalog) {
-      const message = `${messagePrefix}
+    const message = `${messagePrefix}
 
 Gostaria de mais informações sobre o serviço: ${service.name}`;
 
@@ -90,12 +90,20 @@ Gostaria de mais informações sobre o serviço: ${service.name}`;
     setIsSubmitting(true);
     setSubmitError('');
 
+    const telephoneDigits = formData.telephone.replace(/\D/g, '');
+
+    if (telephoneDigits.length < 10 || telephoneDigits.length > 11) {
+      setSubmitError('Informe um telefone brasileiro válido com DDD. Exemplo: 11999999999.');
+      setIsSubmitting(false);
+      return;
+    }
+
     const message = `${messagePrefix}
 
 Serviço escolhido: ${selectedService.name}
 Categoria: ${selectedService.category}
 Nome: ${formData.name}
-Telefone: ${formData.telephone}
+Telefone: ${telephoneDigits}
 Email: ${formData.email}`;
 
     try {
@@ -106,7 +114,7 @@ Email: ${formData.email}`;
         },
         body: JSON.stringify({
           name: formData.name,
-          telephone: formData.telephone,
+          telephone: telephoneDigits,
           email: formData.email,
           service: selectedService.name,
           message,
@@ -295,12 +303,16 @@ Email: ${formData.email}`;
                       <input
                         required
                         type="tel"
+                        inputMode="numeric"
+                        maxLength={11}
+                        pattern="[0-9]{10,11}"
                         value={formData.telephone}
-                        onChange={(event) =>
-                          setFormData((current) => ({ ...current, telephone: event.target.value }))
-                        }
+                        onChange={(event) => {
+                          const digits = event.target.value.replace(/\D/g, '').slice(0, 11);
+                          setFormData((current) => ({ ...current, telephone: digits }));
+                        }}
                         className="w-full rounded-xl border border-brand-beige px-4 py-4 outline-none focus:border-brand-gold"
-                        placeholder="(11) 99999-9999"
+                        placeholder="11999999999"
                       />
                     </div>
 
