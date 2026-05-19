@@ -59,6 +59,18 @@ export const CatalogModal = ({
   const whatsappPhone = customPhoneNumber || PHONE_NUMBER;
 
   const openLeadForm = (service: Service) => {
+    const isDucyCatalog = Boolean(customPhoneNumber);
+
+    if (isDucyCatalog) {
+      const message = `${messagePrefix}
+
+Gostaria de mais informações sobre o serviço: ${service.name}`;
+
+      const whatsappUrl = `https://wa.me/${whatsappPhone}?text=${encodeURIComponent(message)}`;
+      window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
+      return;
+    }
+
     setSelectedService(service);
     setSubmitError('');
   };
