@@ -120,11 +120,11 @@ export const DUCY_SERVICES: { [key: string]: Service[] } = {
 };
 
 export const TEAM: TeamMember[] = [
-  { id: "t1", name: "Bruna", role: "Founder & Estrategista", positioning: "Focada em gestão, qualidade e inovação. Idealizadora do método Beauty Glow de naturalidade consciente.", image: "https://pbs.twimg.com/media/HHo0jjRXgAQlz0C?format=jpg&name=4096x4096" },
+  { id: "t1", name: "Bruna", role: "Founder & Estrategista", positioning: "Focada em gestão, qualidade e inovação. Idealizadora do método Beauty Glow de naturalidade consciente.", image: "https://pbs.twimg.com/media/HHo0jjRXgAQlz0C?format=jpg&name=4096x4096", imagePosition: "center 10%" },
   { id: "t6", name: "Ducy", role: "Nail Design", positioning: "Referência em design sofisticado, focada em durabilidade e cuidado extremo com a saúde das unhas naturais.", image: "https://pbs.twimg.com/media/HIW7KFgXIAAnoiE?format=jpg&name=large" },
   { id: "t2", name: "Juliana", role: "Lips & Lashes", positioning: "Especialista técnica e suporte comercial, garantindo uma jornada de cliente atenciosa e resolutiva.", image: "https://pbs.twimg.com/media/HIn5oZ0WcAAwp2a?format=jpg&name=large" },
-  { id: "t3", name: "Paloma", role: "Brows & Lashes", positioning: "Especialista em manter o rigor técnico e o conceito de sofisticação em cada detalhe do olhar.", image: "https://pbs.twimg.com/media/HIn6NfcWEAAwKy5?format=jpg&name=large" },
-  { id: "t4", name: "Fernanda", role: "Saúde & Injetáveis", positioning: "Responsável pelos procedimentos minimamente invasivos, priorizando segurança absoluta.", image: "https://pbs.twimg.com/media/HIn90zsXEAAx299?format=jpg&name=large", imagePosition: "center 15%" },
+  { id: "t3", name: "Paloma", role: "Brows & Lashes", positioning: "Especialista em manter o rigor técnico e o conceito de sofisticação em cada detalhe do olhar.", image: "https://pbs.twimg.com/media/HIn6NfcWEAAwKy5?format=jpg&name=large", imagePosition: "center 15%" },
+  { id: "t4", name: "Ellen", role: "Biomédica Esteta", positioning: "Especialista em procedimentos estéticos avançados e injetáveis, priorizando segurança absoluta e resultados naturais.", image: "https://pbs.twimg.com/media/HIrplDCWcAAvSXJ?format=jpg&name=large", imagePosition: "center 20%" },
   { id: "t5", name: "Jeu", role: "Auxiliar de Limpeza", positioning: "Responsável pela organização, higienização e manutenção dos ambientes, assegurando padrão elevado de cuidado, biossegurança e conforto.", image: "https://pbs.twimg.com/media/HIn9AO7XcAE33_O?format=jpg&name=large" }
 ];
 
