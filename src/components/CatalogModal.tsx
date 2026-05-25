@@ -1,6 +1,6 @@
 import { FormEvent, useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { X } from 'lucide-react';
+import { MessageCircle, X } from 'lucide-react';
 import { Service } from '../types';
 import { PHONE_NUMBER } from '../constants';
 
@@ -57,10 +57,9 @@ export const CatalogModal = ({
   const defaultMessagePrefix = "Olá, gostaria de agendar minha experiência na Beauty Glow!";
   const messagePrefix = whatsappMessagePrefix || defaultMessagePrefix;
   const whatsappPhone = customPhoneNumber || PHONE_NUMBER;
+  const isDucyCatalog = Boolean(customPhoneNumber);
 
   const openLeadForm = (service: Service) => {
-    const isDucyCatalog = Boolean(customPhoneNumber);
-
     if (isDucyCatalog) {
     const message = `${messagePrefix}
 
@@ -235,7 +234,8 @@ Email: ${formData.email}`;
                             onClick={() => openLeadForm(service)}
                             className="inline-flex items-center gap-3 text-left text-xs uppercase tracking-widest text-brand-black font-semibold group-hover:text-brand-gold transition-colors border-b border-brand-beige group-hover:border-brand-gold pb-1 w-fit"
                           >
-                            Agendar minha experiência
+                            {isDucyCatalog && <MessageCircle size={14} />}
+                            {isDucyCatalog ? 'Falar com especialista' : 'Agendar minha experiência'}
                           </button>
                         </div>
                       </motion.div>
