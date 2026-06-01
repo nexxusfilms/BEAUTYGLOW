@@ -4,6 +4,17 @@ import { X } from 'lucide-react';
 import { Service } from '../types';
 import { PHONE_NUMBER } from '../constants';
 
+function getLeadOrigem(): string {
+  const params = new URLSearchParams(window.location.search);
+  const source = params.get('utm_source');
+  if (source) return source;
+
+  const ref = document.referrer;
+  if (ref.includes('facebook') || ref.includes('instagram') || ref.includes('fb.')) return 'meta';
+  if (ref.includes('google')) return 'google';
+  return 'direto';
+}
+
 interface CatalogModalProps {
   isOpen: boolean;
   onClose: () => void;
@@ -65,7 +76,8 @@ export const CatalogModal = ({
     if (isDucyCatalog || skipForm) {
       const message = `${messagePrefix}
 
-Gostaria de mais informações sobre o serviço: ${service.name}`;
+Gostaria de mais informações sobre o serviço: ${service.name}
+Origem: ${getLeadOrigem()}`;
 
       const whatsappUrl = `https://wa.me/${whatsappPhone}?text=${encodeURIComponent(message)}`;
       window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
@@ -107,13 +119,16 @@ Gostaria de mais informações sobre o serviço: ${service.name}`;
       return;
     }
 
+    const origem = getLeadOrigem();
+
     const message = `${messagePrefix}
 
 Serviço escolhido: ${selectedService.name}
 Categoria: ${selectedService.category}
 Nome: ${formData.name}
 Telefone: ${telephoneDigits}
-Email: ${formData.email}`;
+Email: ${formData.email}
+Origem: ${origem}`;
 
     try {
       const response = await fetch('/api/create-lead', {
@@ -126,6 +141,7 @@ Email: ${formData.email}`;
           telephone: telephoneDigits,
           email: formData.email.trim(),
           service: selectedService.name,
+          origem,
           message,
         }),
       });
