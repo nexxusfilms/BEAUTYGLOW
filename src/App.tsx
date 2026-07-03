@@ -35,7 +35,6 @@ export default function App() {
           subtitle="Procedimentos Avançados"
           services={BRUNA_SERVICES}
           whatsappMessagePrefix="Olá, gostaria de agendar minha experiência na Beauty Glow!"
-          skipForm={true}
         />
 
         <CatalogModal 
