@@ -81,8 +81,7 @@ export const BRUNA_SERVICES: { [key: string]: Service[] } = {
       id: "ij2",
       name: "Preenchimento Facial",
       category: "Injetáveis & Rejuvenescimento",
-      description: "Restauração de volumes e contornos focada em harmonia global, evitando excessos e respeitando a anatomia individual.",
-      image: "https://pbs.twimg.com/media/HIn2WwRWcAEygCk?format=jpg&name=large"
+      description: "Restauração de volumes e contornos focada em harmonia global, evitando excessos e respeitando a anatomia individual."
     },
     {
       id: "ij3",
@@ -217,22 +216,6 @@ export const TEAM: TeamMember[] = [
     role: "Lips & Lashes",
     positioning: "Líder de equipe e responsável pela qualidade técnica.",
     image: "https://pbs.twimg.com/media/HIn5oZ0WcAAwp2a?format=jpg&name=large"
-  },
-  {
-    id: "t3",
-    name: "Paloma",
-    role: "Brows & Lashes",
-    positioning: "Especialista em manter o rigor técnico e o conceito de sofisticação em cada detalhe do olhar.",
-    image: "https://pbs.twimg.com/media/HIn6NfcWEAAwKy5?format=jpg&name=large",
-    imagePosition: "center 15%"
-  },
-  {
-    id: "t4",
-    name: "Ellen",
-    role: "Biomédica Esteta",
-    positioning: "Especialista em procedimentos estéticos avançados e injetáveis, priorizando segurança absoluta e resultados naturais.",
-    image: "https://pbs.twimg.com/media/HIrplDCWcAAvSXJ?format=jpg&name=large",
-    imagePosition: "center 20%"
   },
   {
     id: "t5",
