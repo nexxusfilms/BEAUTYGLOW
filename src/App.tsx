@@ -11,18 +11,24 @@ import Home from './pages/Home';
 import ScrollToTop from './components/ScrollToTop';
 import { CatalogModal } from './components/CatalogModal';
 import { BRUNA_SERVICES, DUCY_SERVICES, NAILS_PHONE_NUMBER } from './constants';
+import { trackEvent } from './tracking';
 
 export default function App() {
   const [openCatalog, setOpenCatalog] = useState<'bruna' | 'ducy' | null>(null);
+
+  const openCatalogTracked = (type: 'bruna' | 'ducy') => {
+    trackEvent('abrir_catalogo', { catalogo: type === 'ducy' ? 'nails' : 'estetica' }, 'ViewContent');
+    setOpenCatalog(type);
+  };
 
   return (
     <Router>
       <ScrollToTop />
       <div className="bg-brand-offwhite min-h-screen selection:bg-brand-beige selection:text-brand-black">
-        <Navbar onOpenCatalog={setOpenCatalog} />
+        <Navbar onOpenCatalog={openCatalogTracked} />
         
         <main>
-          <Home onOpenCatalog={setOpenCatalog} />
+          <Home onOpenCatalog={openCatalogTracked} />
         </main>
 
         <Footer />

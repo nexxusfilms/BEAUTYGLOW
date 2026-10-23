@@ -19,4 +19,8 @@
   body {
     @apply bg-brand-offwhite text-brand-black font-sans antialiased;
   }
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
 }

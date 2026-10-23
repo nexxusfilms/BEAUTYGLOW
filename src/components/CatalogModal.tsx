@@ -1,8 +1,9 @@
-import { FormEvent, useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { X } from 'lucide-react';
 import { Service } from '../types';
 import { PHONE_NUMBER } from '../constants';
+import { trackEvent } from '../tracking';
 
 function getLeadOrigem(): string {
   const params = new URLSearchParams(window.location.search);
@@ -24,14 +25,7 @@ interface CatalogModalProps {
   accentColor?: string;
   customPhoneNumber?: string;
   whatsappMessagePrefix?: string;
-  skipForm?: boolean;
 }
-
-type LeadFormData = {
-  name: string;
-  telephone: string;
-  email: string;
-};
 
 export const CatalogModal = ({
   isOpen,
@@ -42,25 +36,9 @@ export const CatalogModal = ({
   accentColor = "brand-gold",
   customPhoneNumber,
   whatsappMessagePrefix,
-  skipForm = false,
 }: CatalogModalProps) => {
-  const [selectedService, setSelectedService] = useState<Service | null>(null);
-  const [formData, setFormData] = useState<LeadFormData>({
-    name: '',
-    telephone: '',
-    email: '',
-  });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitError, setSubmitError] = useState('');
-
   useEffect(() => {
-    if (isOpen) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = 'unset';
-      setSelectedService(null);
-      setSubmitError('');
-    }
+    document.body.style.overflow = isOpen ? 'hidden' : 'unset';
 
     return () => {
       document.body.style.overflow = 'unset';
@@ -71,102 +49,24 @@ export const CatalogModal = ({
   const messagePrefix = whatsappMessagePrefix || defaultMessagePrefix;
   const whatsappPhone = customPhoneNumber || PHONE_NUMBER;
   const isDucyCatalog = Boolean(customPhoneNumber);
+  const catalogName = isDucyCatalog ? 'nails' : 'estetica';
 
-  const openLeadForm = (service: Service) => {
-    if (isDucyCatalog || skipForm) {
-      const message = `${messagePrefix}
-
-Gostaria de mais informações sobre o serviço: ${service.name}
-Origem: ${getLeadOrigem()}`;
-
-      const whatsappUrl = `https://wa.me/${whatsappPhone}?text=${encodeURIComponent(message)}`;
-      window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
-      return;
-    }
-
-    setSelectedService(service);
-    setSubmitError('');
-  };
-
-  const closeLeadForm = () => {
-    if (isSubmitting) return;
-
-    setSelectedService(null);
-    setSubmitError('');
-  };
-
-  const handleSubmitLead = async (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-
-    if (!selectedService) return;
-
-    setIsSubmitting(true);
-    setSubmitError('');
-
-    const telephoneDigits = formData.telephone.replace(/\D/g, '');
-
-    if (telephoneDigits.length !== 11) {
-      setSubmitError('Informe um celular brasileiro válido com DDD. Exemplo: 11999999999.');
-      setIsSubmitting(false);
-      return;
-    }
-
-    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
-
-    if (!emailPattern.test(formData.email.trim())) {
-      setSubmitError('Informe um email válido. Exemplo: nome@email.com.');
-      setIsSubmitting(false);
-      return;
-    }
-
+  const openWhatsApp = (service: Service) => {
     const origem = getLeadOrigem();
-
     const message = `${messagePrefix}
 
-Serviço escolhido: ${selectedService.name}
-Categoria: ${selectedService.category}
-Nome: ${formData.name}
-Telefone: ${telephoneDigits}
-Email: ${formData.email}
+Gostaria de mais informações sobre o serviço: ${service.name}
 Origem: ${origem}`;
 
-    try {
-      const response = await fetch('/api/create-lead', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          name: formData.name,
-          telephone: telephoneDigits,
-          email: formData.email.trim(),
-          service: selectedService.name,
-          origem,
-          message,
-        }),
-      });
+    trackEvent('whatsapp_click', {
+      catalogo: catalogName,
+      servico: service.name,
+      categoria: service.category,
+      origem,
+    }, 'Contact');
 
-      const result = await response.json();
-
-      if (!response.ok || !result.ok) {
-        throw new Error(result.error || 'Não foi possível enviar seus dados.');
-      }
-
-      const whatsappUrl = `https://wa.me/${whatsappPhone}?text=${encodeURIComponent(message)}`;
-
-      setFormData({
-        name: '',
-        telephone: '',
-        email: '',
-      });
-
-      window.location.href = whatsappUrl;
-    } catch (error) {
-      console.error(error);
-      setSubmitError('Não foi possível enviar seus dados. Tente novamente ou chame pelo WhatsApp.');
-    } finally {
-      setIsSubmitting(false);
-    }
+    const whatsappUrl = `https://wa.me/${whatsappPhone}?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
   };
 
   return (
@@ -249,7 +149,11 @@ Origem: ${origem}`;
 
                           <button
                             type="button"
-                            onClick={() => openLeadForm(service)}
+                            id={`btn-whatsapp-${service.id}`}
+                            data-track="whatsapp"
+                            data-catalogo={catalogName}
+                            data-servico={service.name}
+                            onClick={() => openWhatsApp(service)}
                             className="inline-flex items-center gap-2 border border-brand-gold text-brand-gold text-xs uppercase tracking-widest px-4 py-3 rounded hover:bg-brand-gold hover:text-white transition-all duration-300 w-fit"
                           >
                             <svg
@@ -276,119 +180,6 @@ Origem: ${origem}`;
               </p>
             </div>
           </motion.div>
-
-          <AnimatePresence>
-            {selectedService && (
-              <motion.div
-                className="absolute inset-0 z-[120] flex items-center justify-center p-4 bg-brand-black/70 backdrop-blur-md"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-              >
-                <motion.div
-                  className="relative w-full max-w-xl bg-white rounded-2xl shadow-2xl p-8 md:p-10"
-                  initial={{ scale: 0.95, y: 20, opacity: 0 }}
-                  animate={{ scale: 1, y: 0, opacity: 1 }}
-                  exit={{ scale: 0.95, y: 20, opacity: 0 }}
-                >
-                  <button
-                    type="button"
-                    onClick={closeLeadForm}
-                    className="absolute top-5 right-5 p-2 hover:bg-brand-nude rounded-full transition-colors text-brand-black"
-                    aria-label="Fechar formulário"
-                  >
-                    <X size={24} strokeWidth={1.5} />
-                  </button>
-
-                  <span className="text-xs uppercase tracking-[0.3em] text-brand-gold mb-3 block font-medium">
-                    Agendamento
-                  </span>
-
-                  <h3 className="font-serif text-3xl text-brand-black mb-3">
-                    {selectedService.name}
-                  </h3>
-
-                  <p className="text-sm text-brand-black/60 mb-8 leading-relaxed">
-                    Preencha seus dados para nossa equipe receber seu interesse e continuar o atendimento.
-                  </p>
-
-                  <form onSubmit={handleSubmitLead} className="space-y-5">
-                    <div>
-                      <label className="block text-xs uppercase tracking-widest text-brand-black/50 mb-2">
-                        Nome
-                      </label>
-                      <input
-                        required
-                        type="text"
-                        value={formData.name}
-                        onChange={(event) =>
-                          setFormData((current) => ({ ...current, name: event.target.value }))
-                        }
-                        className="w-full rounded-xl border border-brand-beige px-4 py-4 outline-none focus:border-brand-gold"
-                        placeholder="Seu nome"
-                      />
-                    </div>
-
-                    <div>
-                      <label className="block text-xs uppercase tracking-widest text-brand-black/50 mb-2">
-                        Telefone/WhatsApp
-                      </label>
-                      <input
-                        required
-                        type="text"
-                        inputMode="numeric"
-                        maxLength={11}
-                        pattern="[0-9]{11}"
-                        value={formData.telephone}
-                        onChange={(event) => {
-                          const digits = event.target.value.replace(/\D/g, '').slice(0, 11);
-                          setFormData((current) => ({ ...current, telephone: digits }));
-                        }}
-                        onPaste={(event) => {
-                          event.preventDefault();
-                          const pasted = event.clipboardData.getData('text').replace(/\D/g, '').slice(0, 11);
-                          setFormData((current) => ({ ...current, telephone: pasted }));
-                        }}
-                        className="w-full rounded-xl border border-brand-beige px-4 py-4 outline-none focus:border-brand-gold"
-                        placeholder="11999999999"
-                      />
-                    </div>
-
-                    <div>
-                      <label className="block text-xs uppercase tracking-widest text-brand-black/50 mb-2">
-                        Email
-                      </label>
-                      <input
-                        required
-                        type="email"
-                        pattern="[^\s@]+@[^\s@]+\.[^\s@]{2,}"
-                        value={formData.email}
-                        onChange={(event) =>
-                          setFormData((current) => ({ ...current, email: event.target.value }))
-                        }
-                        className="w-full rounded-xl border border-brand-beige px-4 py-4 outline-none focus:border-brand-gold"
-                        placeholder="seuemail@email.com"
-                      />
-                    </div>
-
-                    {submitError && (
-                      <p className="text-sm text-red-600">
-                        {submitError}
-                      </p>
-                    )}
-
-                    <button
-                      type="submit"
-                      disabled={isSubmitting}
-                      className="w-full bg-brand-black text-white rounded-full px-8 py-5 text-xs uppercase tracking-widest hover:bg-brand-gold transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
-                    >
-                      {isSubmitting ? 'Enviando...' : 'Enviar e continuar pelo WhatsApp'}
-                    </button>
-                  </form>
-                </motion.div>
-              </motion.div>
-            )}
-          </AnimatePresence>
         </motion.div>
       )}
     </AnimatePresence>
