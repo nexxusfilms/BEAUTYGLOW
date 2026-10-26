@@ -112,10 +112,6 @@ export const LocationSection = () => {
                 referrerPolicy="no-referrer-when-downgrade"
                 className="w-full h-full"
               ></iframe>
-              <div className="absolute top-4 left-4 md:top-6 md:left-6 bg-white/90 backdrop-blur-sm px-3 py-1.5 md:px-4 md:py-2 rounded-full shadow-lg flex items-center gap-2 border border-brand-gold/20 pointer-events-none">
-                <div className="w-1.5 h-1.5 md:w-2 md:h-2 rounded-full bg-brand-gold animate-pulse" />
-                <span className="text-[8px] md:text-[10px] uppercase tracking-widest text-brand-black font-bold">Local Exclusivo</span>
-              </div>
             </motion.div>
           </div>
 
