@@ -8,7 +8,6 @@ const navLinks = [
   { name: 'A Clínica', href: '/#about' },
   { name: 'Tratamentos', href: '/#tratamentos' },
   { name: 'Resultados', href: '/#resultados' },
-  { name: 'Equipe', href: '/#team' },
   { name: 'Onde Estamos', href: '/#location' },
 ];
 

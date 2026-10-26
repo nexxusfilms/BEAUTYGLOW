@@ -8,15 +8,6 @@ export interface Service {
   imagePosition?: string;
 }
 
-export interface TeamMember {
-  id: string;
-  name: string;
-  role: string;
-  positioning: string;
-  image?: string;
-  imagePosition?: string;
-}
-
 export interface Testimonial {
   id: string;
   author: string;

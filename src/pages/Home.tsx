@@ -3,7 +3,6 @@ import { Reviews } from '../components/Reviews';
 import { Treatments } from '../components/Treatments';
 import { About } from '../components/About';
 import { Results } from '../components/Results';
-import { TeamSection } from '../components/TeamSection';
 import { LocationSection } from '../components/LocationSection';
 import { Section } from '../components/Layout';
 import { WhatsAppIcon, WhatsAppLink } from '../whatsapp';
@@ -43,7 +42,6 @@ export default function Home() {
       </Section>
 
       <Results />
-      <TeamSection />
       <LocationSection />
     </>
   );

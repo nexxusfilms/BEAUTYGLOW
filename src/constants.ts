@@ -1,4 +1,4 @@
-import { HeroSlide, ResultItem, Service, TeamMember } from './types';
+import { HeroSlide, ResultItem, Service } from './types';
 
 export const PHONE_NUMBER = "5511932032385";
 
@@ -163,31 +163,6 @@ export const TREATMENTS: { [key: string]: Service[] } = {
     }
   ]
 };
-
-export const TEAM: TeamMember[] = [
-  {
-    id: "t1",
-    name: "Bruna",
-    role: "Founder & Estrategista",
-    positioning: "Focada em gestão, qualidade e inovação. Idealizadora do método Beauty Glow de naturalidade consciente.",
-    image: "https://pbs.twimg.com/media/HHo0jjRXgAQlz0C?format=jpg&name=4096x4096",
-    imagePosition: "center 10%"
-  },
-  {
-    id: "t2",
-    name: "Juliana",
-    role: "Lips & Lashes",
-    positioning: "Líder de equipe e responsável pela qualidade técnica.",
-    image: "https://pbs.twimg.com/media/HIn5oZ0WcAAwp2a?format=jpg&name=large"
-  },
-  {
-    id: "t5",
-    name: "Jeu",
-    role: "Auxiliar de Limpeza",
-    positioning: "Responsável pela organização, higienização e manutenção dos ambientes, assegurando padrão elevado de cuidado, biossegurança e conforto.",
-    image: "https://pbs.twimg.com/media/HIn9AO7XcAE33_O?format=jpg&name=large"
-  }
-];
 
 export const TESTIMONIALS = [
   {

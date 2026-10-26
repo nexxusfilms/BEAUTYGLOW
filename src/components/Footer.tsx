@@ -47,7 +47,6 @@ export const Footer = () => (
           <h4 className="text-xs uppercase tracking-[0.3em] text-brand-soft-gold font-medium">Institucional</h4>
           <ul className="flex flex-col gap-3 text-sm font-light text-brand-offwhite/70">
             <li><a href="/#about" className="hover:text-brand-soft-gold transition-colors">A Clínica</a></li>
-            <li><a href="/#team" className="hover:text-brand-soft-gold transition-colors">Equipe</a></li>
             <li><a href="/#location" className="hover:text-brand-soft-gold transition-colors">Onde Estamos</a></li>
             <li><Link to="/privacidade" className="hover:text-brand-soft-gold transition-colors">Privacidade</Link></li>
           </ul>
