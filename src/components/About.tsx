@@ -21,10 +21,10 @@ export const About = () => {
         </motion.div>
         
         <div className="flex flex-col justify-center py-6 md:py-10">
-          <span className="text-[10px] md:text-xs uppercase tracking-[0.4em] text-brand-gold mb-8 block">Sobre a Clínica</span>
+          <span className="text-[10px] md:text-xs uppercase tracking-[0.4em] text-brand-gold-deep mb-8 block">Sobre a Clínica</span>
           <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-7xl mb-8 md:mb-12 leading-[1.1] text-brand-black">
             A essência da <br />
-            <span className="italic font-light text-brand-gold font-serif">Beauty Glow.</span>
+            <span className="italic font-light text-brand-gold-deep font-serif">Beauty Glow.</span>
           </h2>
           <div className="space-y-6 md:space-y-10 text-brand-black/70 leading-relaxed font-light text-base md:text-lg">
             <p>

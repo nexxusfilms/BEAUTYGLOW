@@ -6,7 +6,7 @@ export const TeamSection = () => {
   return (
     <Section id="team">
       <div className="mb-20 text-center">
-        <span className="text-xs uppercase tracking-widest text-brand-gold mb-6 block">Nosso Time</span>
+        <span className="text-xs uppercase tracking-widest text-brand-gold-deep mb-6 block">Nosso Time</span>
         <h2 className="font-serif text-4xl md:text-5xl mb-4">Especialistas</h2>
         <p className="max-w-2xl mx-auto font-light text-brand-black/60 text-sm">
           Profissionais dedicados a entregar o mais alto padrão estético com sensibilidade e técnica.
@@ -32,7 +32,7 @@ export const TeamSection = () => {
               />
             </div>
             <h4 className="font-serif text-xl mb-1">{member.name}</h4>
-            <p className="text-xs uppercase tracking-widest text-brand-gold mb-4">{member.role}</p>
+            <p className="text-xs uppercase tracking-widest text-brand-gold-deep mb-4">{member.role}</p>
             <p className="text-xs font-light text-brand-black/60 leading-relaxed group-hover:text-brand-black transition-colors">
               {member.positioning}
             </p>

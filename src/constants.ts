@@ -1,9 +1,70 @@
-import { Service, TeamMember } from './types';
+import { HeroSlide, ResultItem, Service, TeamMember } from './types';
 
 export const PHONE_NUMBER = "5511932032385";
-export const NAILS_PHONE_NUMBER = "5511953936451";
 
-export const BRUNA_SERVICES: { [key: string]: Service[] } = {
+export const CLINIC = {
+  name: "Beauty Glow",
+  address: "R. Chile, 39 - Jardim América, São Paulo - SP, 01436-050",
+  latitude: -23.575940,
+  longitude: -46.670295,
+  instagram: "https://www.instagram.com/beautyglowbr/",
+  instagramHandle: "@beautyglowbr",
+  email: "academybeautyglow@gmail.com",
+  googleMapsUrl: "https://www.google.com/maps/place/Cl%C3%ADnica+de+Est%C3%A9tica+Beauty+Glow/@-23.5759381,-46.6702848,17z/data=!3m1!4b1!4m6!3m5!1s0x94ce5999766a84f7:0x8a3f43197b512c6a!8m2!3d-23.5759381!4d-46.6702848!16s%2Fg%2F11rjts6fy2?entry=ttu",
+};
+
+// Banner rotativo do topo do site. As imagens abaixo são provisórias,
+// até chegarem as 4 artes oficiais.
+export const HERO_SLIDES: HeroSlide[] = [
+  {
+    id: "h1",
+    image: "https://pbs.twimg.com/media/HInty-SWAAE9xhv?format=jpg&name=large",
+    servico: "Nanopigmentação de Sobrancelhas",
+    eyebrow: "Sobrancelhas",
+    title: "Nanopigmentação de Sobrancelhas",
+    subtitle: "Fios desenhados um a um para um olhar natural e harmônico.",
+    showText: true,
+  },
+  {
+    id: "h2",
+    image: "https://pbs.twimg.com/media/HInxhUXWkAE-WsJ?format=jpg&name=large",
+    servico: "Nanopigmentação Labial",
+    eyebrow: "Lábios",
+    title: "Lábios com cor e definição",
+    subtitle: "Revitalização do tom natural com acabamento delicado.",
+    showText: true,
+  },
+  {
+    id: "h3",
+    image: "https://pbs.twimg.com/media/HIs5U6tXgAA7o35?format=jpg&name=large",
+    servico: "Toxina Botulínica",
+    eyebrow: "Injetáveis",
+    title: "Rejuvenescimento sem perder a expressão",
+    subtitle: "Toxina botulínica com dosagem personalizada e resultado natural.",
+    showText: true,
+  },
+  {
+    id: "h4",
+    image: "https://pbs.twimg.com/media/HHozd1CWoAMgk9e?format=jpg&name=large",
+    servico: "Avaliação personalizada",
+    eyebrow: "Jardins · São Paulo",
+    title: "Beleza natural de alto padrão",
+    subtitle: "Agende sua avaliação personalizada na Beauty Glow.",
+    showText: true,
+  },
+];
+
+// Galeria de antes e depois. Para incluir mais fotos, basta adicionar itens nesta lista.
+export const RESULTS: ResultItem[] = [
+  {
+    id: "r1",
+    image: "https://pbs.twimg.com/media/HIn1S5jXUAEK6Or?format=jpg&name=large",
+    servico: "Bioestimulador de Colágeno",
+    description: "Mais firmeza e sustentação no contorno facial.",
+  },
+];
+
+export const TREATMENTS: { [key: string]: Service[] } = {
   "Sobrancelhas": [
     {
       id: "sb1",
@@ -103,97 +164,6 @@ export const BRUNA_SERVICES: { [key: string]: Service[] } = {
   ]
 };
 
-export const DUCY_SERVICES: { [key: string]: Service[] } = {
-  "Alongamento": [
-    {
-      id: "na1",
-      name: "Alongamento em Gel",
-      category: "Alongamento",
-      description: "Acabamento natural e resistente para um visual elegante e duradouro.",
-      image: "https://pbs.twimg.com/media/HIW2lhSWgAEu1kc?format=jpg&name=medium"
-    },
-    {
-      id: "na2",
-      name: "Alongamento em Acrygel",
-      category: "Alongamento",
-      description: "Equilíbrio perfeito entre a leveza do gel e a força do acrílico.",
-      image: "https://pbs.twimg.com/media/HIs3owwWsAEKWsh?format=jpg&name=large"
-    },
-    {
-      id: "na3",
-      name: "Alongamento em Polygel",
-      category: "Alongamento",
-      description: "Maleabilidade superior e resistência para formatos impecáveis.",
-      image: "https://pbs.twimg.com/media/HIW2lhSWEAAHYPf?format=jpg&name=medium"
-    },
-    {
-      id: "na4",
-      name: "Faceta em Gel",
-      category: "Alongamento",
-      description: "Praticidade e durabilidade com géis pré-curados para correção estética.",
-      image: "https://pbs.twimg.com/media/HIW2lhRW4AAfCKI?format=jpg&name=medium"
-    },
-    {
-      id: "na5",
-      name: "Alinhamento de Lâminas",
-      category: "Alongamento",
-      description: "Harmonização do formato natural sem necessidade de extensões completas.",
-      image: "https://pbs.twimg.com/media/HIW2hpoWMAASxkV?format=jpg&name=medium"
-    }
-  ],
-
-  "Blindagem & Fortalecimento": [
-    {
-      id: "st1",
-      name: "Banho de Gel",
-      category: "Blindagem & Fortalecimento",
-      description: "Camada fina que fortalece as unhas naturais contra quebras e descamações.",
-      image: "https://pbs.twimg.com/media/HIW2iJOXUAAN4NL?format=jpg&name=medium"
-    },
-    {
-      id: "st2",
-      name: "Blindagem",
-      category: "Blindagem & Fortalecimento",
-      description: "Proteção resistente sem volume excessivo sobre a unha natural.",
-      image: "https://pbs.twimg.com/media/HIW2ipTWMAEnamk?format=jpg&name=medium"
-    },
-    {
-      id: "st3",
-      name: "Blindagem Cimentinho",
-      category: "Blindagem & Fortalecimento",
-      description: "Combinação de gel e acrílico para máxima dureza e crescimento saudável.",
-      image: "https://pbs.twimg.com/media/HIW2lhRXQAAWoBS?format=jpg&name=medium"
-    }
-  ],
-
-  "Estilo & Nail Art": [
-    {
-      id: "es1",
-      name: "Formatos Personalizados",
-      category: "Estilo & Nail Art",
-      description: "Square, Almond ou Stiletto: design adaptado à anatomia das suas mãos.",
-      image: "https://pbs.twimg.com/media/HIs4TdaXsAAOQuU?format=jpg&name=medium"
-    },
-    {
-      id: "es2",
-      name: "Nail Art Sofisticada",
-      category: "Estilo & Nail Art",
-      description: "Personalização com pedrarias, madrepérola e texturas para um visual exclusivo.",
-      image: "https://pbs.twimg.com/media/HIn-0n2W8AACv9G?format=jpg&name=large"
-    }
-  ],
-
-  "Cutilagem": [
-    {
-      id: "cu1",
-      name: "Cutilagem Híbrida",
-      category: "Cutilagem",
-      description: "Técnica avançada que combina métodos manuais e mecânicos para um acabamento impecável e duradouro.",
-      image: "https://pbs.twimg.com/media/HIt2C-eXYAA55UD?format=jpg&name=large"
-    }
-  ]
-};
-
 export const TEAM: TeamMember[] = [
   {
     id: "t1",
@@ -202,13 +172,6 @@ export const TEAM: TeamMember[] = [
     positioning: "Focada em gestão, qualidade e inovação. Idealizadora do método Beauty Glow de naturalidade consciente.",
     image: "https://pbs.twimg.com/media/HHo0jjRXgAQlz0C?format=jpg&name=4096x4096",
     imagePosition: "center 10%"
-  },
-  {
-    id: "t6",
-    name: "Ducy",
-    role: "Nail Design",
-    positioning: "Referência em design sofisticado, focada em durabilidade e cuidado extremo com a saúde das unhas naturais.",
-    image: "https://pbs.twimg.com/media/HIW7KFgXIAAnoiE?format=jpg&name=large"
   },
   {
     id: "t2",

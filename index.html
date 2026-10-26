@@ -1,10 +1,64 @@
 <!doctype html>
-<html lang="en">
+<html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Beauty Glow - Clínica de Estética</title>
+    <title>Beauty Glow | Clínica de Estética nos Jardins, São Paulo</title>
+    <meta name="description" content="Clínica de estética nos Jardins, em São Paulo. Nanopigmentação de sobrancelhas e lábios, lash lifting, toxina botulínica, preenchimento e bioestimulador com resultados naturais. Agende pelo WhatsApp." />
+    <meta name="theme-color" content="#FBF6EC" />
+    <link rel="icon" type="image/png" href="/brand/logo.png" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:site_name" content="Beauty Glow" />
+    <meta property="og:title" content="Beauty Glow | Clínica de Estética nos Jardins, São Paulo" />
+    <meta property="og:description" content="Beleza natural de alto padrão. Tratamentos estéticos personalizados no Jardim América, São Paulo." />
+    <meta property="og:image" content="https://pbs.twimg.com/media/HHozd1CWoAMgk9e?format=jpg&name=large" />
+    <link rel="preconnect" href="https://pbs.twimg.com" />
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BeautySalon",
+      "name": "Beauty Glow - Clínica de Estética",
+      "image": "https://pbs.twimg.com/media/HHozd1CWoAMgk9e?format=jpg&name=large",
+      "telephone": "+55 11 93203-2385",
+      "email": "academybeautyglow@gmail.com",
+      "priceRange": "$$$",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "R. Chile, 39",
+        "addressLocality": "São Paulo",
+        "addressRegion": "SP",
+        "postalCode": "01436-050",
+        "addressCountry": "BR"
+      },
+      "geo": { "@type": "GeoCoordinates", "latitude": -23.5759381, "longitude": -46.6702848 },
+      "areaServed": ["Jardins", "Jardim América", "Jardim Europa", "Jardim Paulista", "São Paulo"],
+      "openingHoursSpecification": [
+        { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "09:00", "closes": "19:00" },
+        { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "09:00", "closes": "17:00" }
+      ],
+      "sameAs": ["https://www.instagram.com/beautyglowbr/"]
+    }
+    </script>
+
+    <!-- Consentimento de cookies (LGPD): começa negado até a pessoa aceitar no aviso do site -->
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      window.gtag = gtag;
+      var bgConsent = null;
+      try { bgConsent = localStorage.getItem('bg-cookie-consent'); } catch (e) {}
+      var bgGranted = bgConsent === 'granted' ? 'granted' : 'denied';
+      gtag('consent', 'default', {
+        ad_storage: bgGranted,
+        ad_user_data: bgGranted,
+        ad_personalization: bgGranted,
+        analytics_storage: bgGranted,
+        wait_for_update: 500
+      });
+    </script>
 
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -25,6 +79,7 @@
       s.parentNode.insertBefore(t,s)}(window, document,'script',
       'https://connect.facebook.net/en_US/fbevents.js');
 
+      if (bgGranted !== 'granted') fbq('consent', 'revoke');
       fbq('init', '1184819963802745');
       fbq('track', 'PageView');
     </script>
@@ -38,14 +93,6 @@
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
 
-    <noscript>
-      <img
-        height="1"
-        width="1"
-        style="display:none"
-        src="https://www.facebook.com/tr?id=1184819963802745&ev=PageView&noscript=1"
-      />
-    </noscript>
 
     <div id="root"></div>
 

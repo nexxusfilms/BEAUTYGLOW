@@ -3,55 +3,33 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { useState } from 'react';
-import { BrowserRouter as Router } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
 import Home from './pages/Home';
+import Privacy from './pages/Privacy';
 import ScrollToTop from './components/ScrollToTop';
-import { CatalogModal } from './components/CatalogModal';
-import { BRUNA_SERVICES, DUCY_SERVICES, NAILS_PHONE_NUMBER } from './constants';
-import { trackEvent } from './tracking';
+import { FloatingWhatsApp } from './components/FloatingWhatsApp';
+import { CookieConsent } from './components/CookieConsent';
 
 export default function App() {
-  const [openCatalog, setOpenCatalog] = useState<'bruna' | 'ducy' | null>(null);
-
-  const openCatalogTracked = (type: 'bruna' | 'ducy') => {
-    trackEvent('abrir_catalogo', { catalogo: type === 'ducy' ? 'nails' : 'estetica' }, 'ViewContent');
-    setOpenCatalog(type);
-  };
-
   return (
     <Router>
       <ScrollToTop />
-      <div className="bg-brand-offwhite min-h-screen selection:bg-brand-beige selection:text-brand-black">
-        <Navbar onOpenCatalog={openCatalogTracked} />
-        
-        <main>
-          <Home onOpenCatalog={openCatalogTracked} />
+      <div className="bg-brand-offwhite min-h-screen selection:bg-brand-soft-gold selection:text-brand-black">
+        <Navbar />
+
+        <main className="pt-16 md:pt-20">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/privacidade" element={<Privacy />} />
+            <Route path="*" element={<Home />} />
+          </Routes>
         </main>
 
         <Footer />
-
-        {/* Global Modals */}
-        <CatalogModal 
-          isOpen={openCatalog === 'bruna'}
-          onClose={() => setOpenCatalog(null)}
-          title="Estética Facial & Injetáveis"
-          subtitle="Procedimentos Avançados"
-          services={BRUNA_SERVICES}
-          whatsappMessagePrefix="Olá, gostaria de agendar minha experiência na Beauty Glow!"
-        />
-
-        <CatalogModal 
-          isOpen={openCatalog === 'ducy'}
-          onClose={() => setOpenCatalog(null)}
-          title="Ducy Nails"
-          subtitle="Catálogo Nail Design"
-          services={DUCY_SERVICES}
-          customPhoneNumber={NAILS_PHONE_NUMBER}
-          whatsappMessagePrefix="Olá, gostaria de agendar minha experiência na Beauty Glow com a Ducy Nails!"
-        />
+        <FloatingWhatsApp />
+        <CookieConsent />
       </div>
     </Router>
   );

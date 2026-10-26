@@ -5,11 +5,16 @@
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-serif: "Playfair Display", ui-serif, Georgia, serif;
   
-  --color-brand-nude: #F5F1EE;
-  --color-brand-beige: #E6DED8;
-  --color-brand-gold: #C5A059;
-  --color-brand-offwhite: #FAF9F6;
-  --color-brand-black: #1A1A1A;
+  /* Paleta oficial Beauty Glow */
+  --color-brand-beige: #E3D9CD;      /* Bege cinzento */
+  --color-brand-nude: #E7E1D5;       /* Areia claro */
+  --color-brand-cream: #F3ECDF;      /* Creme marfim */
+  --color-brand-offwhite: #FBF6EC;   /* Branco pérola */
+  --color-brand-soft-gold: #ECDAA5;  /* Dourado suave */
+  --color-brand-gold: #BEA568;       /* Ouro envelhecido */
+  /* Apoio: ouro envelhecido escurecido para textos pequenos (contraste AA) */
+  --color-brand-gold-deep: #7D6A32;
+  --color-brand-black: #2A2622;
 }
 
 @layer base {
