@@ -30,7 +30,7 @@ export const HERO_SLIDES: HeroSlide[] = [
   },
   {
     id: "h2",
-    image: "https://pbs.twimg.com/media/HInxhUXWkAE-WsJ?format=jpg&name=large",
+    image: "/img/HInxhUXWkAE-WsJ.jpg",
     servico: "Nano Lips",
     eyebrow: "Nano Lips",
     title: "Lábios com cor e definição",
@@ -76,7 +76,7 @@ export const HERO_SLIDES: HeroSlide[] = [
 export const RESULTS: ResultItem[] = [
   {
     id: "r1",
-    image: "https://pbs.twimg.com/media/HIn1S5jXUAEK6Or?format=jpg&name=large",
+    image: "/img/HIn1S5jXUAEK6Or.jpg",
     servico: "Bioestimulador de Colágeno",
     description: "Mais firmeza e sustentação no contorno facial.",
   },
@@ -89,28 +89,28 @@ export const TREATMENTS: { [key: string]: Service[] } = {
       name: "Nanopigmentação de Sobrancelhas",
       category: "Sobrancelhas",
       description: "Pilar da Beauty Glow, cada em naturalidade e equilíbrio. Atua restaurando falhas e assimetrias respeitando o visagismo facial e incluindo o protocolo Brow Recovery.",
-      image: "https://pbs.twimg.com/media/HInty-SWAAE9xhv?format=jpg&name=medium"
+      image: "/img/HInty-SWAAE9xhv.jpg"
     },
     {
       id: "sb2",
       name: "Design Visagista",
       category: "Sobrancelhas",
       description: "Estudo de proporções e identidade. Mais que remoção de pelos, é a harmonização da expressão baseada na estrutura óssea e facial.",
-      image: "https://pbs.twimg.com/media/HInxoPfXEAAhLAF?format=jpg&name=medium"
+      image: "/img/HInxoPfXEAAhLAF.jpg"
     },
     {
       id: "sb3",
       name: "Brow Lamination",
       category: "Sobrancelhas",
       description: "Alinhamento estratégico dos fios naturais para um olhar estruturado e definido, mantendo a leveza e saúde capilar.",
-      image: "https://pbs.twimg.com/media/HInxSyrXoAAiXz-?format=jpg&name=medium"
+      image: "/img/HInxSyrXoAAiXz-.jpg"
     },
     {
       id: "sb4",
       name: "Brow Recovery",
       category: "Sobrancelhas",
       description: "Protocolo regenerativo para estimular o folículo e favorecer o crescimento saudável dos fios naturais das sobrancelhas.",
-      image: "https://pbs.twimg.com/media/HIs4XGfXIAE9nj6?format=jpg&name=large"
+      image: "/img/HIs4XGfXIAE9nj6.jpg"
     }
   ],
 
@@ -120,14 +120,14 @@ export const TREATMENTS: { [key: string]: Service[] } = {
       name: "Nanopigmentação Labial",
       category: "Lábios",
       description: "Devolve vitalidade e definição sutil. Inclui neutralização de tons escurecidos e infusão de ácido hialurônico para saúde da pele.",
-      image: "https://pbs.twimg.com/media/HInxhUXWkAE-WsJ?format=jpg&name=large"
+      image: "/img/HInxhUXWkAE-WsJ.jpg"
     },
     {
       id: "lb2",
       name: "Hidratação Labial",
       category: "Lábios",
       description: "Revitalização profunda com nanotecnologia. Melhora textura e viço, podendo incluir efeito lip tint temporário.",
-      image: "https://pbs.twimg.com/media/HInyRooWYAAZ_Cl?format=jpg&name=large"
+      image: "/img/HInyRooWYAAZ_Cl.jpg"
     }
   ],
 
@@ -137,14 +137,14 @@ export const TREATMENTS: { [key: string]: Service[] } = {
       name: "Lash Lifting",
       category: "Olhos",
       description: "Curvatura técnica personalizada dos cílios naturais, preservando a integridade dos fios e realçando o olhar de forma orgânica.",
-      image: "https://pbs.twimg.com/media/HInzYFHWoAEFs5k?format=jpg&name=large"
+      image: "/img/HInzYFHWoAEFs5k.jpg"
     },
     {
       id: "ol2",
       name: "Nanopigmentação de Delineado",
       category: "Olhos",
       description: "Realce elegante e discreto da base dos cílios. Técnicas sutis que valorizam o olhar sem pesar.",
-      image: "https://pbs.twimg.com/media/HInzp41WEAAkKZv?format=jpg&name=large"
+      image: "/img/HInzp41WEAAkKZv.jpg"
     }
   ],
 
@@ -154,7 +154,7 @@ export const TREATMENTS: { [key: string]: Service[] } = {
       name: "Toxina Botulínica",
       category: "Injetáveis & Rejuvenescimento",
       description: "Suavização e prevenção de linhas de expressão com planejamento individualizado para manter a dinâmica natural do rosto.",
-      image: "https://pbs.twimg.com/media/HIs5U6tXgAA7o35?format=jpg&name=large"
+      image: "/img/HIs5U6tXgAA7o35.jpg"
     },
     {
       id: "ij2",
@@ -167,7 +167,7 @@ export const TREATMENTS: { [key: string]: Service[] } = {
       name: "Bioestimulador de Colágeno",
       category: "Injetáveis & Rejuvenescimento",
       description: "Estímulo gradual da produção de colágeno pelo próprio organismo, promovendo firmeza e estrutura à pele a longo prazo.",
-      image: "https://pbs.twimg.com/media/HIn1S5jXUAEK6Or?format=jpg&name=large"
+      image: "/img/HIn1S5jXUAEK6Or.jpg"
     }
   ],
 
@@ -177,7 +177,7 @@ export const TREATMENTS: { [key: string]: Service[] } = {
       name: "Epilação Facial (Linha)",
       category: "Complementares",
       description: "Remoção precisa com linha aprovada pela Anvisa, respeitando a sensibilidade e garantindo acabamento refinado.",
-      image: "https://pbs.twimg.com/media/HIn2WwOW0AAyJvf?format=jpg&name=large"
+      image: "/img/HIn2WwOW0AAyJvf.jpg"
     }
   ]
 };
@@ -187,18 +187,18 @@ export const TESTIMONIALS = [
     id: "te1",
     author: "Maria Constantino",
     content: "Minhas sobrancelhas estão naturalmente lindas desde que as deixei aos cuidados da Beauty Glow. Comecei com um tratamento para crescimento de pelos em falhas que foi um sucesso e não parei mais. Recomendo pra todo mundo!!",
-    image: "https://lh3.googleusercontent.com/a-/ALV-UjWwxSM23NeSrUFGSrmsLR7EnoxG8byfqdBgu7F223s7MvXkl18fNA=w90-h90-p-rp-mo-br100"
+    image: "/img/review-1.png"
   },
   {
     id: "te2",
     author: "Ana Paula Nunes",
     content: "Eu não conhecia esta clínica de estética e fiquei impressionada pela qualidade do serviço. Recomendo.",
-    image: "https://lh3.googleusercontent.com/a-/ALV-UjWL5WCybqnR40vgrBufGAsAniU4bjd5XD6OtfYua3vbmkjbd-vT=w90-h90-p-rp-mo-br100"
+    image: "/img/review-2.png"
   },
   {
     id: "te3",
     author: "Karen do Valle",
     content: "Toda equipe maravilhosa, Bruna fez a micro em minha mãe e eu, e amamos o resultado e o cuidado especial em cada detalhe. Preço justo e serviço excepcional.",
-    image: "https://lh3.googleusercontent.com/a-/ALV-UjWrQmCV3W2sK0zHRtPPXw_WMqQHaP6aZCTFJr4i3Bkvc_aJfUWp=w90-h90-p-rp-mo-br100"
+    image: "/img/review-3.png"
   }
 ];

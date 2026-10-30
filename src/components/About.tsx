@@ -13,7 +13,7 @@ export const About = () => {
           className="relative group h-[300px] md:h-full md:min-h-[600px]"
         >
           <img 
-            src="https://pbs.twimg.com/media/HHozd1CWoAMgk9e?format=jpg&name=medium" 
+            src="/img/HHozd1CWoAMgk9e.jpg" 
             alt="Interior Beauty Glow" 
             className="w-full h-full object-cover object-[center_20%] rounded-xl shadow-2xl transition-transform duration-1000 group-hover:scale-[1.03]"
           />
