@@ -34,7 +34,7 @@ export const Hero = () => {
       id="inicio"
       aria-roledescription="carrossel"
       aria-label="Destaques Beauty Glow"
-      className="relative w-full h-[calc(100svh-4rem)] md:h-[calc(100svh-5rem)] min-h-[520px] max-h-[900px] overflow-hidden bg-brand-black"
+      className="relative w-full aspect-[380/459] md:aspect-auto md:h-[calc(100svh-5rem)] md:min-h-[520px] max-h-[900px] overflow-hidden bg-brand-black"
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
     >
@@ -53,7 +53,7 @@ export const Hero = () => {
             if (info.offset.x < -60) go(1);
             else if (info.offset.x > 60) go(-1);
           }}
-          className="absolute inset-0"
+          className="absolute inset-0 bg-[#2E1D14]"
           role="group"
           aria-roledescription="slide"
           aria-label={`${index + 1} de ${total}: ${slide.servico}`}
@@ -65,35 +65,35 @@ export const Hero = () => {
               alt={slide.title || slide.servico}
               draggable={false}
               fetchPriority={index === 0 ? 'high' : 'auto'}
-              className="w-full h-full object-cover select-none"
+              className={`w-full h-full object-cover select-none ${slide.mobileFit === 'width' ? 'max-md:h-auto max-md:[mask-image:linear-gradient(to_bottom,black_75%,transparent)]' : ''}`}
               style={{ objectPosition: slide.imagePosition || 'center' }}
             />
           </picture>
 
           {slide.showText !== false && (
             <>
-              <div className="absolute inset-0 bg-gradient-to-t from-brand-black/85 via-brand-black/35 to-brand-black/20" />
-              <div className="absolute inset-x-0 bottom-0 px-6 pb-24 md:pb-28">
-                <div className="max-w-7xl mx-auto md:px-16"><div className="max-w-2xl">
+              <div className="absolute inset-0 bg-gradient-to-t from-[#2E1D14]/95 via-[#3A2619]/55 via-40% md:via-55% to-transparent to-65% md:to-100%" />
+              <div className="absolute inset-x-0 bottom-0 px-5 md:px-6 pb-8 md:pb-20">
+                <div className="max-w-7xl mx-auto md:px-16"><div className={slide.narrowText ? 'max-w-2xl md:max-w-md [&_h2]:md:text-6xl' : 'max-w-2xl'}>
                   {slide.eyebrow && (
-                    <span className="block text-[11px] md:text-xs uppercase tracking-[0.35em] text-brand-soft-gold mb-4 font-medium">
+                    <span className="block text-[10px] md:text-sm uppercase tracking-[0.35em] text-brand-soft-gold mb-1.5 md:mb-4 font-medium">
                       {slide.eyebrow}
                     </span>
                   )}
                   {slide.title && (
-                    <h2 className="font-serif text-4xl sm:text-5xl md:text-6xl text-brand-offwhite leading-[1.1] mb-5">
+                    <h2 className="font-serif text-[1.75rem] sm:text-5xl md:text-7xl text-brand-offwhite leading-[1.05] mb-2 md:mb-5">
                       {slide.title}
                     </h2>
                   )}
                   {slide.subtitle && (
-                    <p className="text-brand-offwhite/85 text-base md:text-lg font-light max-w-xl mb-8">
+                    <p className="text-brand-offwhite/90 text-[13px] leading-snug md:leading-normal md:text-xl font-light max-w-md md:max-w-xl mb-3.5 md:mb-8">
                       {slide.subtitle}
                     </p>
                   )}
                   <WhatsAppLink
                     local="banner"
                     servico={slide.servico}
-                    className="inline-flex items-center gap-3 bg-brand-offwhite text-brand-black px-8 py-4 rounded-full text-xs uppercase tracking-[0.2em] font-medium hover:bg-brand-soft-gold transition-colors duration-300 shadow-xl"
+                    className="inline-flex items-center justify-center gap-3 min-w-[200px] md:min-w-[280px] bg-brand-offwhite text-brand-black px-7 py-3 md:py-5 rounded-full text-[11px] md:text-sm uppercase tracking-[0.2em] font-medium hover:bg-brand-soft-gold transition-colors duration-300 shadow-xl"
                   >
                     <WhatsAppIcon />
                     {slide.cta || 'Quero saber mais'}
@@ -123,7 +123,7 @@ export const Hero = () => {
             type="button"
             onClick={() => go(-1)}
             aria-label="Banner anterior"
-            className="absolute left-3 md:left-6 top-[32%] md:top-1/2 -translate-y-1/2 z-10 w-11 h-11 md:w-12 md:h-12 rounded-full bg-brand-offwhite/80 backdrop-blur text-brand-black flex items-center justify-center hover:bg-brand-offwhite transition-colors"
+            className="absolute left-3 md:left-6 top-[25%] md:top-1/2 -translate-y-1/2 z-10 w-11 h-11 md:w-12 md:h-12 rounded-full bg-brand-offwhite/80 backdrop-blur text-brand-black flex items-center justify-center hover:bg-brand-offwhite transition-colors"
           >
             <ChevronLeft size={22} />
           </button>
@@ -131,12 +131,12 @@ export const Hero = () => {
             type="button"
             onClick={() => go(1)}
             aria-label="Próximo banner"
-            className="absolute right-3 md:right-6 top-[32%] md:top-1/2 -translate-y-1/2 z-10 w-11 h-11 md:w-12 md:h-12 rounded-full bg-brand-offwhite/80 backdrop-blur text-brand-black flex items-center justify-center hover:bg-brand-offwhite transition-colors"
+            className="absolute right-3 md:right-6 top-[25%] md:top-1/2 -translate-y-1/2 z-10 w-11 h-11 md:w-12 md:h-12 rounded-full bg-brand-offwhite/80 backdrop-blur text-brand-black flex items-center justify-center hover:bg-brand-offwhite transition-colors"
           >
             <ChevronRight size={22} />
           </button>
 
-          <div className="absolute bottom-6 md:bottom-8 inset-x-0 z-10 flex justify-start pl-4 md:pl-0 md:justify-center gap-1 md:gap-3">
+          <div className="absolute bottom-1 md:bottom-8 inset-x-0 z-10 flex justify-start pl-4 md:pl-0 md:justify-center gap-1 md:gap-3">
             {HERO_SLIDES.map((item, i) => (
               <button
                 key={item.id}

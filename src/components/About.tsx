@@ -3,25 +3,25 @@ import { motion } from 'motion/react';
 
 export const About = () => {
   return (
-    <Section id="about" className="bg-brand-offwhite">
-      <div className="grid md:grid-cols-2 gap-20 items-stretch">
+    <Section id="about" className="bg-brand-offwhite pt-10! md:pt-40!">
+      <div className="grid md:grid-cols-2 gap-8 md:gap-20 items-stretch">
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
           viewport={{ once: true }}
-          className="relative group h-full min-h-[400px] md:min-h-[600px]"
+          className="relative group h-[300px] md:h-full md:min-h-[600px]"
         >
           <img 
             src="https://pbs.twimg.com/media/HHozd1CWoAMgk9e?format=jpg&name=medium" 
             alt="Interior Beauty Glow" 
-            className="w-full h-full object-cover rounded-xl shadow-2xl transition-transform duration-1000 group-hover:scale-[1.03]"
+            className="w-full h-full object-cover object-[center_20%] rounded-xl shadow-2xl transition-transform duration-1000 group-hover:scale-[1.03]"
           />
           <div className="absolute inset-0 border border-brand-gold/20 m-6 pointer-events-none rounded-xl" />
         </motion.div>
         
-        <div className="flex flex-col justify-center py-6 md:py-10">
-          <span className="text-[10px] md:text-xs uppercase tracking-[0.4em] text-brand-gold-deep mb-8 block">Sobre a Clínica</span>
+        <div className="flex flex-col justify-center md:py-10">
+          <span className="text-[10px] md:text-xs uppercase tracking-[0.4em] text-brand-gold-deep mb-4 md:mb-8 block">Sobre a Clínica</span>
           <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-7xl mb-8 md:mb-12 leading-[1.1] text-brand-black">
             A essência da <br />
             <span className="italic font-light text-brand-gold-deep font-serif">Beauty Glow.</span>

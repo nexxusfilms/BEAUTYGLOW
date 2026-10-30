@@ -22,6 +22,10 @@ export interface HeroSlide {
   // Versão vertical para celular (opcional). Sem ela, usa a mesma arte.
   imageMobile?: string;
   imagePosition?: string;
+  // No celular, mostra a foto na largura toda, a partir do topo, e funde com o fundo marrom embaixo.
+  mobileFit?: 'width';
+  // Texto mais estreito no computador, para não tampar a foto.
+  narrowText?: boolean;
   servico: string;
   eyebrow?: string;
   title?: string;
