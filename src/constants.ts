@@ -148,34 +148,34 @@ export const TREATMENTS: { [key: string]: Service[] } = {
     }
   ],
 
-  "Injetáveis & Rejuvenescimento": [
+  "Pele": [
     {
       id: "ij1",
       name: "Toxina Botulínica",
-      category: "Injetáveis & Rejuvenescimento",
+      category: "Pele",
       description: "Suavização e prevenção de linhas de expressão com planejamento individualizado para manter a dinâmica natural do rosto.",
       image: "/img/HIs5U6tXgAA7o35.jpg"
     },
     {
       id: "ij2",
       name: "Preenchimento Facial",
-      category: "Injetáveis & Rejuvenescimento",
+      category: "Pele",
       description: "Restauração de volumes e contornos focada em harmonia global, evitando excessos e respeitando a anatomia individual."
     },
     {
       id: "ij3",
       name: "Bioestimulador de Colágeno",
-      category: "Injetáveis & Rejuvenescimento",
+      category: "Pele",
       description: "Estímulo gradual da produção de colágeno pelo próprio organismo, promovendo firmeza e estrutura à pele a longo prazo.",
       image: "/img/HIn1S5jXUAEK6Or.jpg"
     }
   ],
 
-  "Complementares": [
+  "Estética Avançada": [
     {
       id: "cp1",
       name: "Epilação Facial (Linha)",
-      category: "Complementares",
+      category: "Estética Avançada",
       description: "Remoção precisa com linha aprovada pela Anvisa, respeitando a sensibilidade e garantindo acabamento refinado.",
       image: "/img/HIn2WwOW0AAyJvf.jpg"
     }
