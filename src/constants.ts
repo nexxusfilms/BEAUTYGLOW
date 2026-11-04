@@ -192,7 +192,7 @@ export const TREATMENTS: { [key: string]: Service[] } = {
       name: "Delineado personalizado para realçar e transformar o seu olhar.",
       category: "Olhos",
       description: "Nanopigmentação das pálpebras, com diferentes possibilidades de efeitos, do realce sutil da raiz dos cílios ao delineado clássico ou esfumado, respeitando o formato dos olhos e a identidade de cada olhar.",
-      image: "/img/nano-eyeliner.webp"
+      image: "/img/HInzp41WEAAkKZv.jpg"
     }
   ],
 
