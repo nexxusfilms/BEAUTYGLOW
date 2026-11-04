@@ -1,5 +1,7 @@
 export interface Service {
   id: string;
+  // Nome curto do serviço, mostrado acima do título (ex.: PERFECT BROWS).
+  tag?: string;
   name: string;
   description: string;
   price?: string;

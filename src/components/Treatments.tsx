@@ -73,13 +73,18 @@ export const Treatments = () => {
               )}
 
               <div className="p-6 md:p-7 flex flex-col flex-grow">
-                <h3 className="font-serif text-xl mb-3">{service.name}</h3>
+                {service.tag && (
+                  <span className="text-[11px] md:text-xs uppercase tracking-[0.3em] text-brand-gold-deep mb-3 block">
+                    {service.tag}
+                  </span>
+                )}
+                <h3 className={`font-serif mb-3 ${service.tag ? 'text-2xl md:text-[1.7rem] leading-tight' : 'text-xl'}`}>{service.name}</h3>
                 <p className="text-sm font-light leading-relaxed text-brand-black/70 mb-6 flex-grow">
                   {service.description}
                 </p>
                 <WhatsAppLink
                   local="tratamentos"
-                  servico={service.name}
+                  servico={service.tag || service.name}
                   categoria={service.category}
                   id={`btn-whatsapp-${service.id}`}
                   className="inline-flex items-center justify-center gap-2 bg-brand-black text-brand-offwhite text-xs uppercase tracking-[0.15em] px-5 py-3.5 rounded-full hover:bg-brand-gold-deep transition-colors duration-300"

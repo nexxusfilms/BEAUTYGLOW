@@ -85,32 +85,37 @@ export const RESULTS: ResultItem[] = [
 export const TREATMENTS: { [key: string]: Service[] } = {
   "Sobrancelhas": [
     {
-      id: "sb1",
-      name: "Nanopigmentação de Sobrancelhas",
-      category: "Sobrancelhas",
-      description: "Pilar da Beauty Glow, cada em naturalidade e equilíbrio. Atua restaurando falhas e assimetrias respeitando o visagismo facial e incluindo o protocolo Brow Recovery.",
-      image: "/img/HInty-SWAAE9xhv.jpg"
-    },
-    {
       id: "sb2",
-      name: "Design Visagista",
+      tag: "Perfect Brows",
+      name: "Design de Sobrancelhas Exclusivo",
       category: "Sobrancelhas",
-      description: "Estudo de proporções e identidade. Mais que remoção de pelos, é a harmonização da expressão baseada na estrutura óssea e facial.",
-      image: "/img/HInxoPfXEAAhLAF.jpg"
+      description: "Procedimento de alta performance que une visagismo e harmonização facial, com um desenho personalizado que valoriza seu olhar, de forma natural e elegante.",
+      image: "/img/perfect-brows.webp"
     },
     {
       id: "sb3",
-      name: "Brow Lamination",
+      tag: "Brows Lift",
+      name: "Sobrancelhas mais alinhadas e valorizadas",
       category: "Sobrancelhas",
-      description: "Alinhamento estratégico dos fios naturais para um olhar estruturado e definido, mantendo a leveza e saúde capilar.",
-      image: "/img/HInxSyrXoAAiXz-.jpg"
+      description: "Protocolo exclusivo que combina Brow Lamination, Design Visagista, coloração e um ritual sensorial de cuidado, para um olhar mais marcante e uma aparência de sobrancelhas mais cheias, definidas e harmoniosas.",
+      image: "/img/brows-lift.webp"
+    },
+    {
+      id: "sb1",
+      tag: "Nano Brows",
+      name: "Sobrancelhas naturalmente definidas, com harmonia e sofisticação.",
+      category: "Sobrancelhas",
+      description: "Técnica exclusiva de nanopigmentação que valoriza o desenho das sobrancelhas, preenchendo falhas e proporcionando mais definição e naturalidade, com um resultado personalizado que respeita a identidade de cada rosto.",
+      image: "/img/HInty-SWAAE9xhv.jpg",
+      imagePosition: "center 41%"
     },
     {
       id: "sb4",
-      name: "Brow Recovery",
+      tag: "Exo Glow Brows",
+      name: "Sobrancelhas mais preenchidas, fortes e saudáveis.",
       category: "Sobrancelhas",
-      description: "Protocolo regenerativo para estimular o folículo e favorecer o crescimento saudável dos fios naturais das sobrancelhas.",
-      image: "/img/HIs4XGfXIAE9nj6.jpg"
+      description: "Tratamento regenerativo de tecnologia coreana que estimula o crescimento dos fios, fortalece as sobrancelhas e auxilia na recuperação de falhas, promovendo uma aparência mais preenchida e natural.",
+      image: "/img/exo-glow-brows.webp"
     }
   ],
 
@@ -124,58 +129,153 @@ export const TREATMENTS: { [key: string]: Service[] } = {
     },
     {
       id: "lb2",
-      name: "Hidratação Labial",
+      tag: "Lip Glow Therapy",
+      name: "Cuidado especial para os lábios",
       category: "Lábios",
-      description: "Revitalização profunda com nanotecnologia. Melhora textura e viço, podendo incluir efeito lip tint temporário.",
-      image: "/img/HInyRooWYAAZ_Cl.jpg"
+      description: "Ritual de cuidado labial que combina esfoliação suave, hidratação e finalização com brilho, proporcionando uma experiência breve e acolhedora, pensada para deixar os lábios com sensação de maciez e conforto.",
+      image: "/img/lip-glow-therapy.webp"
+    },
+    {
+      id: "lb3",
+      tag: "Glow Lips Hydro",
+      name: "Hidratação e renovação para os lábios.",
+      category: "Lábios",
+      description: "Protocolo tecnológico de cuidado labial que combina ativos específicos, hidratação e uma etapa com microagulhas, auxiliando na melhora da textura e proporcionando lábios mais macios, hidratados e com aparência saudável.",
+      image: "/img/glow-lips-hydro.webp"
+    },
+    {
+      id: "lb4",
+      tag: "Glow Lips Regenerate",
+      name: "Regeneração e cuidado avançado para os lábios.",
+      category: "Lábios",
+      description: "Protocolo de regeneração labial, que combina ativos específicos de tecnologia coreana selecionados para regenerar, recuperar e hidratar profundamente os lábios.",
+      image: "/img/glow-lips-regenerate.webp"
     }
   ],
 
   "Olhos": [
     {
       id: "ol1",
-      name: "Lash Lifting",
+      tag: "Lash Lift & Tint",
+      name: "Cílios naturais com efeito alongado e curvatura perfeita",
       category: "Olhos",
-      description: "Curvatura técnica personalizada dos cílios naturais, preservando a integridade dos fios e realçando o olhar de forma orgânica.",
+      description: "Realce todo o potencial dos seus cílios naturais! Um protocolo que combina curvatura e coloração para criar um olhar mais aberto, marcante e expressivo, com efeito de máscara de cílios e praticidade no dia a dia.",
       image: "/img/HInzYFHWoAEFs5k.jpg"
     },
     {
-      id: "ol2",
-      name: "Nanopigmentação de Delineado",
+      id: "ol3",
+      tag: "Soft Natural Lashes",
+      name: "Extensão de cílios com efeito natural",
       category: "Olhos",
-      description: "Realce elegante e discreto da base dos cílios. Técnicas sutis que valorizam o olhar sem pesar.",
-      image: "/img/HInzp41WEAAkKZv.jpg"
+      description: "Alongamento personalizado fio a fio ou em volume light, que proporciona cílios mais preenchidos, definidos e um olhar delicadamente realçado, respeitando a harmonia dos seus traços.",
+      image: "/img/soft-natural-lashes.webp"
+    },
+    {
+      id: "ol4",
+      tag: "Glam Lashes",
+      name: "Cílios mais volumosos, preenchidos e um olhar marcante.",
+      category: "Olhos",
+      description: "Extensão de cílios com efeito mais volumoso e expressivo, ideal para quem deseja um olhar mais intenso, destacado e com presença, valorizando a beleza dos olhos.",
+      image: "/img/glam-lashes.webp"
+    },
+    {
+      id: "ol5",
+      tag: "Glow Lash Refill",
+      name: "Mantenha seus cílios sempre impecáveis e renovados.",
+      category: "Olhos",
+      description: "Manutenção exclusiva para clientes Beauty Glow que desejam preservar a beleza e o preenchimento das extensões. Indicada dentro do prazo estabelecido pela clínica, mediante avaliação das extensões e dos fios naturais.",
+      image: "/img/glow-lash-refill.webp"
+    },
+    {
+      id: "ol2",
+      tag: "Nano Eyeliner",
+      name: "Delineado personalizado para realçar e transformar o seu olhar.",
+      category: "Olhos",
+      description: "Nanopigmentação das pálpebras, com diferentes possibilidades de efeitos, do realce sutil da raiz dos cílios ao delineado clássico ou esfumado, respeitando o formato dos olhos e a identidade de cada olhar.",
+      image: "/img/nano-eyeliner.webp"
     }
   ],
 
   "Pele": [
     {
-      id: "ij1",
-      name: "Toxina Botulínica",
+      id: "pl1",
+      tag: "K-Beauty Glow",
+      name: "Uma experiência de cuidado coreano para revelar uma pele radiante.",
       category: "Pele",
-      description: "Suavização e prevenção de linhas de expressão com planejamento individualizado para manter a dinâmica natural do rosto.",
-      image: "/img/HIs5U6tXgAA7o35.jpg"
+      description: "Ritual facial inspirado na beleza coreana, que combina etapas de cuidado e revitalização para proporcionar uma pele com aparência mais fresca, luminosa e bem cuidada. Pode ser complementado com a limpeza de pele, conforme a necessidade e avaliação individual.",
+      image: "/img/k-beauty-glow.webp"
     },
     {
-      id: "ij2",
-      name: "Preenchimento Facial",
+      id: "pl2",
+      tag: "Korean Glow Peel",
+      name: "O segredo da Glass Skin: luminosidade, uniformidade e pele renovada.",
       category: "Pele",
-      description: "Restauração de volumes e contornos focada em harmonia global, evitando excessos e respeitando a anatomia individual."
+      description: "Inspirado na tecnologia coreana, o Korean Glow Peel é um peeling químico de nova geração que promove a renovação da pele, auxiliando na melhora da textura, luminosidade, oleosidade, poros aparentes e uniformidade do tom. Uma experiência de cuidado avançado para conquistar uma pele com aparência mais lisa, viçosa e radiante, sem a descamação intensa dos peelings tradicionais.",
+      image: "/img/korean-glow-peel.webp"
     },
     {
-      id: "ij3",
-      name: "Bioestimulador de Colágeno",
+      id: "pl3",
+      tag: "BB Glow",
+      name: "Efeito pele de porcelana: mais luminosidade e uniformidade.",
       category: "Pele",
-      description: "Estímulo gradual da produção de colágeno pelo próprio organismo, promovendo firmeza e estrutura à pele a longo prazo.",
-      image: "/img/HIn1S5jXUAEK6Or.jpg"
+      description: "Tratamento estético inspirado no efeito BB Cream, que utiliza séruns específicos para proporcionar uma pele com aparência mais uniforme, luminosa e revitalizada, valorizando o viço e a beleza natural do rosto.",
+      image: "/img/bb-glow.webp"
+    },
+    {
+      id: "pl4",
+      tag: "Glow Exo Regen",
+      name: "Biotecnologia coreana e inovação para o cuidado avançado da sua pele.",
+      category: "Pele",
+      description: "Uma experiência de cuidado regenerativo que combina ativos biotecnológicos de origem coreana, com foco na qualidade, textura e firmeza da pele. Protocolo exclusivo assinado por Bruna Guma, que traz para a Beauty Glow conhecimentos e tecnologias diretamente da Coreia do Sul, com planejamento personalizado para cada pele.",
+      image: "/img/glow-exo-regen.webp"
     }
   ],
 
-  "Estética Avançada": [
+  "Complementares": [
+    {
+      id: "cp2",
+      tag: "Glow Hair & Beard",
+      name: "Estímulo ao crescimento e mais densidade para os fios.",
+      category: "Complementares",
+      description: "Protocolo de estímulo capilar que combina microagulhamento e ativos biotecnológicos de origem coreana, com foco no fortalecimento dos fios, estímulo ao crescimento e melhora da densidade capilar, tanto no cabelo quanto na barba.",
+      image: "/img/glow-hair-beard.webp"
+    },
+    {
+      id: "cp3",
+      tag: "Glow Skin Repigmentation",
+      name: "Micropigmentação paramédica e harmonização da pele.",
+      category: "Complementares",
+      description: "Técnicas especializadas de micropigmentação paramédica para camuflagem de manchas senis, cicatrizes e estrias, além da harmonização e restauração estética das aréolas. Protocolos personalizados que buscam promover maior uniformidade visual, respeitando as características e particularidades de cada pele.",
+      image: "/img/glow-skin-repigmentation.webp"
+    },
+    {
+      id: "cp4",
+      tag: "Glow Inject",
+      name: "Realce sua beleza com equilíbrio e naturalidade.",
+      category: "Complementares",
+      description: "Tratamentos injetáveis personalizados que incluem toxina botulínica, preenchimentos, bioestimuladores e outras possibilidades para cuidar dos sinais do envelhecimento, valorizar os contornos e promover harmonia facial.",
+      image: "/img/glow-inject.webp"
+    },
+    {
+      id: "cp5",
+      tag: "Glow Laser Technologies",
+      name: "Tecnologia avançada para transformar o cuidado com a sua pele.",
+      category: "Complementares",
+      description: "Tratamentos com tecnologias avançadas como Lavieen, laser de CO₂ e Ultraformer, entre outras, para estimular o rejuvenescimento, melhorar a textura, promover firmeza e valorizar a qualidade da pele, com protocolos personalizados para cada necessidade.",
+      image: "/img/glow-laser-technologies.webp"
+    },
+    {
+      id: "cp6",
+      tag: "Glow Laser Removal",
+      name: "Uma nova possibilidade para pigmentos que você deseja remover",
+      category: "Complementares",
+      description: "Tratamento especializado para remoção de pigmentos de sobrancelhas, lábios e tatuagens, com tecnologia e planejamento individualizado de acordo com as características do pigmento e da região tratada.",
+      image: "/img/glow-laser-removal.webp"
+    },
     {
       id: "cp1",
       name: "Epilação Facial (Linha)",
-      category: "Estética Avançada",
+      category: "Complementares",
       description: "Remoção precisa com linha aprovada pela Anvisa, respeitando a sensibilidade e garantindo acabamento refinado.",
       image: "/img/HIn2WwOW0AAyJvf.jpg"
     }
