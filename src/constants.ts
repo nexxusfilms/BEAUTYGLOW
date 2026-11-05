@@ -161,7 +161,7 @@ export const TREATMENTS: { [key: string]: Service[] } = {
       name: "Cílios naturais com efeito alongado e curvatura perfeita",
       category: "Olhos",
       description: "Realce todo o potencial dos seus cílios naturais! Um protocolo que combina curvatura e coloração para criar um olhar mais aberto, marcante e expressivo, com efeito de máscara de cílios e praticidade no dia a dia.",
-      image: "/img/HInzYFHWoAEFs5k.jpg"
+      image: "/img/lash-lift-tint.webp"
     },
     {
       id: "ol3",
