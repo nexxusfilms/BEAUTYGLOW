@@ -4,7 +4,7 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { HERO_SLIDES } from '../constants';
 import { WhatsAppIcon, WhatsAppLink } from '../whatsapp';
 
-const AUTOPLAY_MS = 6000;
+const AUTOPLAY_MS = 3000;
 
 export const Hero = () => {
   const [index, setIndex] = useState(0);

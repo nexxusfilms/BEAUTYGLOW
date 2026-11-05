@@ -122,6 +122,7 @@ export const TREATMENTS: { [key: string]: Service[] } = {
   "Lábios": [
     {
       id: "lb1",
+      tag: "Nano Lips",
       name: "Nanopigmentação Labial",
       category: "Lábios",
       description: "Devolve vitalidade e definição sutil. Inclui neutralização de tons escurecidos e infusão de ácido hialurônico para saúde da pele.",
@@ -149,7 +150,7 @@ export const TREATMENTS: { [key: string]: Service[] } = {
       name: "Regeneração e cuidado avançado para os lábios.",
       category: "Lábios",
       description: "Protocolo de regeneração labial, que combina ativos específicos de tecnologia coreana selecionados para regenerar, recuperar e hidratar profundamente os lábios.",
-      image: "/img/glow-lips-regenerate.webp"
+      image: "/img/glow-lips-regenerate-v2.webp"
     }
   ],
 
@@ -192,7 +193,7 @@ export const TREATMENTS: { [key: string]: Service[] } = {
       name: "Delineado personalizado para realçar e transformar o seu olhar.",
       category: "Olhos",
       description: "Nanopigmentação das pálpebras, com diferentes possibilidades de efeitos, do realce sutil da raiz dos cílios ao delineado clássico ou esfumado, respeitando o formato dos olhos e a identidade de cada olhar.",
-      image: "/img/HInzp41WEAAkKZv.jpg"
+      image: "/img/nano-eyeliner-v2.webp"
     }
   ],
 
@@ -271,13 +272,6 @@ export const TREATMENTS: { [key: string]: Service[] } = {
       category: "Complementares",
       description: "Tratamento especializado para remoção de pigmentos de sobrancelhas, lábios e tatuagens, com tecnologia e planejamento individualizado de acordo com as características do pigmento e da região tratada.",
       image: "/img/glow-laser-removal.webp"
-    },
-    {
-      id: "cp1",
-      name: "Epilação Facial (Linha)",
-      category: "Complementares",
-      description: "Remoção precisa com linha aprovada pela Anvisa, respeitando a sensibilidade e garantindo acabamento refinado.",
-      image: "/img/HIn2WwOW0AAyJvf.jpg"
     }
   ]
 };
